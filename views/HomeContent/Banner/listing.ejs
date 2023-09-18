@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../Layout/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('../../Layout/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('../../Layout/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Banner</h1>
+      
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+          <a href="/banner/addListing" ><button type="button" class="btn btn-success" style="color:black">Add</button></a>
+            <table class="table datatable" style="margin-top: 20px;">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                 
+                  <th scope="col">Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let count=0 %>
+                <% for(let elements of data){%>
+                <tr>
+                  <th scope="row"><%= count+=1%></th>
+                  <td><img src="/<%= elements.image %>" height="50px" width="50px" alt="banner"></td>
+                  <td><%= elements.title%>%></td>
+                  <td><%= elements.description%></td>
+                  <td>
+                    <button class="btn btn-success">Active</button>
+
+                  </td>
+                  
+                  <td scope="col"><a href="/banner/listing/editlisting/<%=elements._id%>" class="btn btn-info">
+                   Edit</a> 
+                   <a href="/banner/listing/deletelisting/<%=elements._id%>" class="btn btn-danger" >Delete</a>
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+            
+
+        </div>
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('../../Layout/footer.ejs')%>

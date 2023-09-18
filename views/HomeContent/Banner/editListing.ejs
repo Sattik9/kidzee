@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../Layout/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('../../Layout/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('../../Layout/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <div class='container'>
+    <div class='row mt-5'>
+        <div class='col-4'></div>
+        <div class='col-4'>
+            <form style="margin-top: 20px;" action="/banner/listing/editlisting/updatelisting" method="post">
+                <div class='card shadow p-3'>
+                    <div class='card-header'>
+                        <h4 class='text-center'>User Login Form</h4>
+                    </div>
+                    <div class='card-body'>
+                        <div class='row'>
+                            <div class='col-12'>
+                                
+                            </div>
+                            <div class="row">
+                            <div class='col-12'>
+                                <input  type="hidden" name="id" class='form-control' value="<%=data._id%>"  required  />
+                            </div>
+                             </div>
+                            <div class="row">
+                            <div class='col-12'>
+                                    <label class='form-label'>Title<span class='err-msg'>*</span></label>
+                                    <input  type="text" name="title" class='form-control' value="<%=data.title%>" required  />
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class='col-12'>
+                                <label class='form-label'>Description<span class='err-msg'>*</span></label>
+                                <input  type="text" name="description" class='form-control' value="<%=data.description%>" required  />
+                            </div>
+                           </div>
+                           
+                            
+                        </div>
+                    </div>
+                    <div class='card-footer'>
+                    <button class='btn btn-info btn-sm'>Submit</button>
+                    <button class='btn btn-secondary btn-sm '>Back</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class='col-4'></div>
+    </div>
+</div>
+
+  </div>
+  <!-- ======= Footer ======= -->
+  <%- include('../../Layout/footer.ejs')%>
